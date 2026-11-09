@@ -17,6 +17,7 @@
 | 🛠️ **`servidor-minecraft`** | Flujo estándar para cualquier cambio en tus servidores: **orientarse → cambiar → avisar de recompilar/desplegar → registrar en `docs/CHANGELOG.md`**. Incluye buenas prácticas para plugins Paper (eventos, async, PDC, items y dinero). |
 | 📜 **`analisis-logs-minecraft`** | Cómo leer un `latest.log`: acotar por hora y jugador, distinguir ruido de problemas, búsquedas `grep` útiles y casos típicos (items perdidos, plugins que no cargan, caídas). |
 | 🏗️ **`constructor-minecraft`** | Principios de simetría, paridad, proporción y detalle para generar **schematics** y construcciones, con comprobaciones automáticas antes de entregar. |
+| 🧱 **`tools/motor_construcciones`** | Motor Python que genera **schematics `.schem`** (Sponge v3) con lienzo, decoración simétrica, validación de bloques, vistas previas y comprobación de ida y vuelta. Es la parte de código de `constructor-minecraft`. |
 | 🔎 **`tools/exploit_hunt`** | Script Python (solo lectura) que caza **dupes** y repartos de items en la base de datos de CoreProtect. |
 | 📄 **`templates/`** | Plantillas listas para tu proyecto: `CLAUDE.md` (mapa del servidor), `EXPLOITS.md` (checklist de código seguro + cómo cazar + caso real) y `CHANGELOG.md`. |
 

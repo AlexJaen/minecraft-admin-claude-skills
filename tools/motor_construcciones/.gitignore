@@ -1,0 +1,5 @@
+vendor/
+assets/
+salidas/
+__pycache__/
+*.pyc
