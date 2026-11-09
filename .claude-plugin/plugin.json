@@ -1,0 +1,8 @@
+{
+  "name": "minecraft-server-admin",
+  "version": "1.0.0",
+  "description": "Skills y herramientas para administrar un servidor Minecraft (Paper) con Claude: flujo de trabajo y changelog, análisis de logs, caza de dupes con CoreProtect y constructor de schematics.",
+  "author": { "name": "Lorealex" },
+  "license": "MIT",
+  "keywords": ["minecraft", "paper", "server-admin", "plugins", "coreprotect", "logs", "schematics"]
+}

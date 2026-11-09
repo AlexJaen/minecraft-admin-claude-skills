@@ -1,0 +1,11 @@
+{
+  "name": "minecraft-admin-claude-skills",
+  "owner": { "name": "Lorealex" },
+  "plugins": [
+    {
+      "name": "minecraft-server-admin",
+      "source": "./",
+      "description": "Skills y herramientas para administrar un servidor Minecraft (Paper) con Claude: flujo de trabajo y changelog, análisis de logs, caza de dupes con CoreProtect y constructor de schematics."
+    }
+  ]
+}
