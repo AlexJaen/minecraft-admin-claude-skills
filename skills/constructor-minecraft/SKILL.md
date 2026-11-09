@@ -55,4 +55,4 @@ Vale para cualquier encargo: un edificio, una casa, una arena, una plaza, un spa
 - **Estados:** hojas siempre con `persistent=true`. Los estados van normalizados a 'true'/'false' en minúsculas. Valida todos los bloques contra el catálogo de bloques de la versión antes de escribir.
 - **Block entities** (spawners, cofres, carteles): con sus datos completos. Los spawners de animales necesitan hierba y luz ≥ 9.
 - **Copyright:** no reproducir personajes, mobs ni logos de terceros.
-- **Herramientas:** usa el motor de `tools/motor_construcciones/` (instálalo con `bash setup.sh`; ver su README) o tu propio generador/lector de schematics.
+- **Herramientas:** usa el motor de `tools/motor_construcciones/`. Instálalo con `python instalar.py` (ver su README) y, si el instalador marca algo como `[FALTA]`, díselo al usuario: no escribas un generador propio de sustitución. Es válido otro generador solo si el usuario lo aporta.

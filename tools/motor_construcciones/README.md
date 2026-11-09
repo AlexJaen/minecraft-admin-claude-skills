@@ -4,13 +4,26 @@ Genera construcciones de Minecraft como **schematics `.schem`** (Sponge v3) list
 
 Las reglas de diseño (simetría, paridad, decoración, procedimiento) están en la skill [`constructor-minecraft`](../../skills/constructor-minecraft/SKILL.md). Este paquete es la parte de código.
 
-## Instalación (Linux / espacio de trabajo de Claude)
+## Instalación (Windows, Linux o macOS)
 
-```bash
-bash setup.sh
+Necesitas **Python 3.10 o superior** y **git** (solo la primera vez). Desde la carpeta `tools/motor_construcciones`:
+
+```
+python instalar.py          # en Windows también: py instalar.py
 ```
 
-Instala dependencias de Python, descarga **Schematica** (fijada a un commit), el catálogo de bloques 26.1 y las texturas 1.21.11 de PrismarineJS, y hace una prueba (casa de ejemplo en `salidas/casa_prueba/`). Necesita `git`, `python3` (>= 3.10) y acceso a GitHub. `vendor/`, `assets/` y `salidas/` se generan y no se suben al repositorio.
+Qué hace, paso a paso:
+
+1. Comprueba la versión de Python.
+2. Comprueba `numpy` y `Pillow` (casi siempre vienen instalados) e instala `nbtlib` desde `wheels/`, sin conexión.
+3. Comprueba los datos del motor: **Schematica** (base de diseño), el **catálogo de bloques 26.1** y las **texturas** de bloques. Si faltan, los **descarga con git** (Schematica fijada a un commit, texturas con *sparse checkout*) en `vendor/` y `assets/`. Esos dos directorios no se incluyen en este repositorio: Schematica no declara licencia y las texturas son de Mojang.
+4. Genera una casa de prueba en `salidas/casa_prueba/` y termina con `LISTO`, o marca con `[FALTA]` lo que no esté y cómo resolverlo.
+
+Opciones: `--comprobar` (solo revisa, no instala), `--sin-prueba` (no genera la casa de prueba) y `--sin-descarga` (no descarga nada).
+
+**Sin conexión:** si ya tienes una copia completa del paquete (con `vendor/` y `assets/` dentro), el instalador no necesita internet. Cópiala tal cual a la máquina sin red. Solo haría falta conexión si falta `numpy` o `Pillow`; en ese caso copia sus `.whl` a `wheels/`.
+
+> La descarga de Schematica y de las texturas no está probada en todos los sistemas: si falla, el instalador te muestra el error de git. Los datos bajan solo a tu equipo; no se vuelven a subir al repositorio (`vendor/`, `assets/` y `salidas/` están en el `.gitignore`).
 
 ## Módulos
 
@@ -28,7 +41,7 @@ Instala dependencias de Python, descarga **Schematica** (fijada a un commit), el
 
 ## Ejemplo
 
-`builds/casa_prueba.py`: casa pequeña con piezas (`python3 builds/casa_prueba.py`). Salida en `salidas/casa_prueba/` (`.schem`, vista previa y lista de materiales).
+`builds/casa_prueba.py`: casa pequeña con piezas (`python builds/casa_prueba.py`). Salida en `salidas/casa_prueba/` (`.schem`, vista previa y lista de materiales).
 
 ## Flujo resumido
 
@@ -44,4 +57,4 @@ Instala dependencias de Python, descarga **Schematica** (fijada a un commit), el
 - `DATA_VERSION` está fijada en `motor.py` (4903, Minecraft 26.x); cámbiala si tu servidor usa otra versión.
 - `Offset` = esquina mínima respecto a los pies del jugador al pegar.
 - Hojas siempre `persistent=true`; spawners con `SpawnData`; estados normalizados.
-- **Schematica** (descargada por `setup.sh`, no incluida aquí) no declara licencia: uso personal. El texto de `setup.sh` la clona en tu máquina, este repositorio no la redistribuye.
+- **Schematica** (descargada por `instalar.py`, no incluida aquí) no declara licencia: uso personal. El instalador la clona en tu máquina; este repositorio no la redistribuye.

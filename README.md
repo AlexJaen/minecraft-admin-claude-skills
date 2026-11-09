@@ -38,6 +38,17 @@ cp -r minecraft-admin-claude-skills/skills/* ~/.claude/skills/
 ```
 *(Opción B sin probar en todas las versiones del cliente; si falla, usa la A.)*
 
+### Instalar el motor de construcciones (opcional)
+
+Necesita Python 3.10+ y git (solo la primera vez, para bajar Schematica y las texturas):
+
+```bash
+cd tools/motor_construcciones
+python instalar.py          # Windows: py instalar.py
+```
+
+Comprueba las dependencias, instala `nbtlib` desde el propio repositorio, descarga los datos que falten y genera una casa de prueba (`LISTO` si todo va bien). Detalles, opciones y uso sin conexión en [`tools/motor_construcciones/README.md`](tools/motor_construcciones/README.md).
+
 ## Puesta en marcha en tu proyecto
 
 1. Copia `templates/CLAUDE.md` a la raíz de tu proyecto y rellena la tabla de servidores y las reglas.
